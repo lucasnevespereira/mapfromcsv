@@ -54,8 +54,19 @@ func writeOutput(data Data) {
 	funcName = strings.Replace(funcName, "/", "_", -1)
 	funcName = strings.Replace(funcName, " ", "_", -1)
 	funcName = strings.Replace(funcName, ",", "", -1)
+	funcName = strings.Replace(funcName, "D’", "", -1)
+	funcName = strings.Replace(funcName, "’", "", -1)
+	funcName = strings.Replace(funcName, "D'", "", -1)
 	funcName = strings.Replace(funcName, "'", "", -1)
 	funcName = strings.Replace(funcName, "É", "E", -1)
+	funcName = strings.Replace(funcName, "È", "E", -1)
+	funcName = strings.Replace(funcName, "&", "", -1)
+	funcName = strings.Replace(funcName, "(", "", -1)
+	funcName = strings.Replace(funcName, ")", "", -1)
+	funcName = strings.Replace(funcName, "–", "", -1)
+	funcName = strings.Replace(funcName, "__", "_", -1)
+	funcName = strings.Replace(funcName, ".", "", -1)
+	funcName = strings.Replace(funcName, "Ô", "O", -1)
 
 	f.WriteString(
 		funcName + "(" + "\"" +
