@@ -37,10 +37,15 @@ NAME_WITH_SLASH("004","Name/with/Slash","78","true"),
 <hr>
 
 #### Additional info
-Using argument2 as func name but you can change this here.
-Also you can add more string replacements, here I handle spaces and "/".
+Using arg2 (second argument) as func name but you can change this here.
 ```
 	funcName := strings.ToUpper(data.arg2)
-	funcName = strings.Replace(funcName, "/", "_", -1)
-	funcName = strings.Replace(funcName, " ", "_", -1)
+```
+
+You can edit or add your string replacement rules in `rules.go`
+```
+	{
+		character:   "Â",
+		replacement: "A",
+	},
 ```
