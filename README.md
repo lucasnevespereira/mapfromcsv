@@ -35,6 +35,7 @@ NAME_WITH_SLASH("004","Name/with/Slash","78","true"),
 ```
 
 <hr>
+
 #### Additional info
 Using argument2 as func name but you can change this here.
 Also you can add more string replacements, here I handle spaces and "/".
