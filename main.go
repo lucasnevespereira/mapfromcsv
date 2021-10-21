@@ -50,8 +50,12 @@ func writeOutput(data Data) {
 	defer f.Close()
 
 	funcName := strings.ToUpper(data.arg2)
+	// func name string replacements
 	funcName = strings.Replace(funcName, "/", "_", -1)
 	funcName = strings.Replace(funcName, " ", "_", -1)
+	funcName = strings.Replace(funcName, ",", "", -1)
+	funcName = strings.Replace(funcName, "'", "", -1)
+	funcName = strings.Replace(funcName, "É", "E", -1)
 
 	f.WriteString(
 		funcName + "(" + "\"" +
