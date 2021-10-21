@@ -1,2 +1,2 @@
 output:
-	go run main.go
+	go run github.com/lucasnevespereira/mapfromcsv
