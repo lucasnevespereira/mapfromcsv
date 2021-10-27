@@ -38,17 +38,19 @@ func main() {
 			arg3: col[2],
 			arg4: col[3],
 		}
+
 		writeOutput(d)
 	}
 }
 
-func writeOutput(data Data) {
+func writeOutput(d Data) {
 	f, err := os.OpenFile(outFileName, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Println(err)
 	}
 	defer f.Close()
 
+	data := trimData(d)
 	funcName := strings.ToUpper(data.arg2)
 
 	// func name string replacements
@@ -63,4 +65,18 @@ func writeOutput(data Data) {
 			"\"" + data.arg3 + "\"," +
 			"\"" + data.arg4 +
 			"\")" + ",\n")
+}
+
+func trimData(d Data) *Data {
+	d1 := strings.TrimSpace(d.arg1)
+	d2 := strings.TrimSpace(d.arg2)
+	d3 := strings.TrimSpace(d.arg3)
+	d4 := strings.TrimSpace(d.arg4)
+
+	return &Data{
+		arg1: d1,
+		arg2: d2,
+		arg3: d3,
+		arg4: d4,
+	}
 }
